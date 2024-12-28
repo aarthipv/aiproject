@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>AI Writing Assistant</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #1e1e2f;
+            color: #e4e4e7;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+            background-color: #2a2a3e;
+            color: #e4e4e7;
+            border: 1px solid #44475a;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            resize: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        textarea::placeholder {
+            color: #6c6c80;
+        }
+
+        button {
+            background-color: #3c3c5c;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        button:hover {
+            background-color: #52527b;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        #output {
+            margin-top: 20px;
+            width: 80%;
+            background-color: #2a2a3e;
+            color: #ffffff;
+            border: 1px solid #44475a;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            min-height: 100px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Writing Assistant</h1>
+    <textarea id="inputText" placeholder="Type your text here..."></textarea>
+    
+    <div>
+        <button onclick="correctText()">Correct Grammar</button>
+        <button onclick="getSuggestions()">Get Suggestions</button>
+        <button onclick="enhanceContent()">Enhance Content</button>
+        
+
+    </div>
+    
+    <div id="output"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

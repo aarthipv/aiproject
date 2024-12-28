@@ -1,0 +1,6 @@
+flask
+transformers==4.30.0
+torch
+spacy
+flask_sqlalchemy
+numpy
